@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Button } from 'react-bootstrap';
 
-export function ClickMe(props: React.ClassAttributes<{onClick: any, name: string}>) {
+// eslint-disable-next-line
+export function ClickMe(props: any) {
     return (
-        <Button onClick={props.ref('')} bsStyle="primary">{props.name}</Button>
+        <Button onClick={props.onClick} bsStyle="primary">{props.name}</Button>
     );
 }
