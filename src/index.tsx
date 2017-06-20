@@ -4,7 +4,7 @@ import 'react-bootstrap';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './styles/App.css';
+import './styles/App.scss';
 
 ReactDOM.render(
   <App />,
