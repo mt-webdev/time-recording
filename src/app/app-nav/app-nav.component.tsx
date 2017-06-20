@@ -7,7 +7,7 @@ export default class AppNav extends React.Component<{}, null> {
         return (
             <div className="nav">
                 <div className="nav-button">
-                    <Glyphicon glyph={'menu'}  />
+                    <Glyphicon glyph={'nav'}  />
                     Menu
                 </div>
             </div>
