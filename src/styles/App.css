@@ -5,3 +5,12 @@ html, body {
   font-size: 14px;
   color: #333;
   font-family: 'Trebuchet MS', sans-serif; }
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch; }
+  .app-wrapper .app-nav {
+    flex-basis: 100%; }
+  .app-wrapper .app-container {
+    flex-grow: 1; }

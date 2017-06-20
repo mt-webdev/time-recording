@@ -1,11 +1,16 @@
 import * as React from 'react';
-
+import { Glyphicon } from 'react-bootstrap';
 
 export default class AppNav extends React.Component<{}, null> {
 
     render() {
         return (
-            <h1>AppNav</h1>
+            <div className="nav">
+                <div className="nav-button">
+                    <Glyphicon glyph={'menu'}  />
+                    Menu
+                </div>
+            </div>
         );
     }
 

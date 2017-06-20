@@ -8,4 +8,18 @@ html, body {
   color: #333;
   font-family: 'Trebuchet MS', sans-serif;
 }
- 
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+
+
+  .app-nav {
+    flex-basis: 100%;
+  }
+
+  .app-container {
+    flex-grow: 1;
+  }
+} 
