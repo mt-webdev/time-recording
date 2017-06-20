@@ -4,29 +4,39 @@ import * as renderer from 'react-test-renderer';
 
 import { ClickCounter } from './click-counter.component';
 
-it('renders without crashing', () => {
+function getComponentFromRenderer(renderer: renderer.Renderer): ClickCounter {
+    return renderer['_component']['_renderedComponent']['_instance'];
+}
+
+test('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<ClickCounter />, div);
 });
 
-it('counter init with zero', () => {
+test('counter init with zero', () => {
     const component = new ClickCounter();
 
     expect(component.state.counter).toBe(0);
 });
 
-it('reset counter to zero', () => {
-    const component = new ClickCounter();
-    const counterAfterReset = component.resetCounter();
+test('reset counter to zero', () => {
+    const componentRenderer = renderer.create(<ClickCounter />);
+    let clickCounter = getComponentFromRenderer(componentRenderer);
+    expect(clickCounter).toBeTruthy();
 
-    expect(counterAfterReset).toBe(0);
+    const count = 5;
+    clickCounter.setState({counter: count});
+    expect(clickCounter.state.counter).toBe(count);
+
+    clickCounter.resetCounter();
+    expect(clickCounter.state.counter).toBe(0);
 });
 
-it('increment counter', () => {
-    const component = new ClickCounter();
-    component.state = {counter: 5};
-    const counter = component.state.counter;
-    component.incrementCounter();
+test('increment counter', () => {
+    const componentRenderer = renderer.create(<ClickCounter />);
+    const clickCounmter = getComponentFromRenderer(componentRenderer);
+    expect(clickCounmter.state.counter).toBe(0);
 
-    expect(component.state.counter).toBe(counter + 1);
+    clickCounmter.incrementCounter();
+    expect(clickCounmter.state.counter).toBe(1);
 });

@@ -10,6 +10,9 @@ export class ClickCounter extends React.Component<{}, ClickCounterState> {
     constructor() {
         super();
 
+        this.incrementCounter = this.incrementCounter.bind(this);
+        this.resetCounter = this.resetCounter.bind(this);
+
         this.state = {
             counter: 0
         };
@@ -20,7 +23,7 @@ export class ClickCounter extends React.Component<{}, ClickCounterState> {
     }
 
     resetCounter() {
-        // this.setState({ counter: 0 });
+        this.setState({ counter: 0 });
     }
 
     render() {
