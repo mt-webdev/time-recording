@@ -1,3 +1,5 @@
+This is my first react-app. Just some fun time-tracking application.
+
 <<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
